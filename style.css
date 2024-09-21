@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #cfcece;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sobre-mi"
+        "proyectos"
+        "contacto"
+        "footer";
+    grid-template-rows: auto 1fr auto auto auto;
+    height: 100vh;
+    gap: 20px;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.sobre-mi {
+    grid-area: sobre-mi;
+    padding: 20px;
+}
+
+.proyectos {
+    grid-area: proyectos;
+    padding: 20px;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.proyecto {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.proyecto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.proyecto:hover {
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto {
+    background-color: #cfcece;
+    grid-area: contacto;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.contacto img {
+    max-width: 5%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        grid-template-areas: 
+            "header"
+            "sobre-mi"
+            "proyectos"
+            "contacto"
+            "footer";
+    }
+}
